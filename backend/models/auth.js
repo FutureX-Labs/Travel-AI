@@ -2,6 +2,10 @@ const mongoose = require("mongoose");
 const { Schema } = mongoose;
 
 const auth = new Schema({
+  fullname: {
+    type: String,
+    required: true,
+  },
   username: {
     type: String,
     required: true,
