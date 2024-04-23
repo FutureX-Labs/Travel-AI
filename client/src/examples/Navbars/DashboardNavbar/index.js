@@ -151,15 +151,18 @@ function DashboardNavbar({ absolute, light, isMini }) {
             sx={(theme) => ({
               ...navbarRow(theme, { isMini }),
               backgroundColor: " #2B2B2B",
-              padding: "10px",
-              borderRadius: "20px",
+              padding: "10px 10px",
+              borderRadius: "30px",
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
             })}
           >
-            <SoftBox pr={1} mr="auto" className="searchMain">
+            <div className="inputBox">
               <Search className="searchButton" />
 
               <input type="text" className="search" placeholder="Search" />
-            </SoftBox>
+            </div>
             <SoftBox color={light ? "white" : "inherit"} display="flex" alignItems="center">
               {/* <Link to="/authentication/sign-in">
                 <IconButton sx={navbarIconButton} size="small">
@@ -197,21 +200,23 @@ function DashboardNavbar({ absolute, light, isMini }) {
               >
                 <Icon>settings</Icon>
               </IconButton> */}
-              <Info />
+              <Info margin={"0px 3px"} />
               <IconButton
                 size="small"
                 color="white"
-                sx={navbarIconButton}
+                // sx={navbarIconButton}
+                sx={{ margin: "0px 3px" }}
                 aria-controls="notification-menu"
                 aria-haspopup="true"
                 variant="contained"
+                // margin="0px 10px"
                 onClick={handleOpenMenu}
               >
                 <Icon className={light ? "text-white" : "text-dark"} color="white">
                   notifications
                 </Icon>
               </IconButton>
-              <img src={user} alt="user" style={{ borderRadius: "50%" }} />
+              <img src={user} alt="user" style={{ borderRadius: "50%", width: "32px" }} />
               {renderMenu()}
             </SoftBox>
           </SoftBox>

@@ -1,18 +1,3 @@
-/**
-=========================================================
-* Soft UI Dashboard React - v4.0.1
-=========================================================
-
-* Product Page: https://www.creative-tim.com/product/soft-ui-dashboard-react
-* Copyright 2023 Creative Tim (https://www.creative-tim.com)
-
-Coded by www.creative-tim.com
-
- =========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-*/
-
 /** 
   All of the routes for the Soft UI Dashboard React are added here,
   You can add a new route, customize the routes and delete the routes here.
@@ -76,7 +61,7 @@ const routes = [
     key: "dashboard",
     route: "/dashboard",
     icon: <Visits size="15px" />,
-    component: <Dashboard />,
+    // component: <Dashboard />,
     noCollapse: true,
   },
 
@@ -86,19 +71,28 @@ const routes = [
     key: "billing",
     route: "/billing",
     icon: <Home size="15px" />,
-    component: <Billing />,
+    // component: <Billing />,
     noCollapse: true,
   },
   { type: "title", title: "Other Pages", key: "other-pages" },
   {
     type: "collapse",
-    name: "Sign In",
-    key: "sign-in",
-    route: "/authentication/sign-in",
+    name: "Signup",
+    key: "signup",
+    route: "/signup",
     icon: <Document size="15px" />,
-    component: <SignIn />,
+    // component: <Billing />,
     noCollapse: true,
   },
+  // {
+  //   type: "collapse",
+  //   name: "Sign In",
+  //   key: "sign-in",
+  //   route: "/authentication/sign-in",
+  //   icon: <Document size="15px" />,
+  //   // component: <SignIn />,
+  //   noCollapse: true,
+  // },
   // {
   //   type: "collapse",
   //   name: "Virtual Reality",

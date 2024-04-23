@@ -123,9 +123,11 @@ const navbarIconButton = ({ typography: { size }, breakpoints }) => ({
 const navbarMobileMenu = ({ breakpoints }) => ({
   display: "inline-block",
   lineHeight: 0,
+  marign: "0px 10px",
 
   [breakpoints.up("xl")]: {
     display: "none",
+    marign: "0px 10px",
   },
 });
 

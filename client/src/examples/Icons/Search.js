@@ -9,16 +9,25 @@ function Search({ color, size }) {
       width={size}
       height={size}
       viewBox="0 0 12 12"
-      fill="white"
+      fill="
+      #87E2E8"
       xmlns="http://www.w3.org/2000/svg"
     >
-      <circle cx="5.14764" cy="5" r="4.3" stroke="white" strokeWidth="1.4" fill="#37393E" />
+      <circle
+        cx="5.14764"
+        cy="5"
+        r="4.3"
+        stroke="
+#87E2E8"
+        strokeWidth="1.4"
+        fill="#37393E"
+      />
       <line
         x1="10.1577"
         y1="11"
         x2="8.14764"
         y2="8.98995"
-        stroke="white"
+        stroke="  #87E2E8"
         strokeWidth="1.4"
         strokeLinecap="round"
       />

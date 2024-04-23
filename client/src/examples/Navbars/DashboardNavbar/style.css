@@ -10,11 +10,28 @@
 
 .search {
   color: white;
-  /* height: 20px; */
-  /* width: 150px; */
+  background-color: transparent;
+  padding: 0px 0px;
+  margin: 0px 4px;
+  border: none;
+  outline: none;
+}
+.search:focus {
+  border: none;
+  outline: none;
 }
 
 .searchButton {
   padding: 0px;
-  margin: 0px !;
+  margin: 0px;
+  color: #87e2e8;
+}
+.inputBox {
+  border-radius: 30px;
+  background-color: #38393e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 10px;
+  margin-right: 10px;
 }

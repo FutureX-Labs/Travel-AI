@@ -24,7 +24,7 @@ h2 {
   font-weight: bold;
 }
 .chat-body {
-  /* max-height: calc(100vh -300px); */
+  min-height: calc(100vh - 240px);
   overflow: auto;
   overflow-x: hidden;
   scrollbar-color: grey;
@@ -44,7 +44,7 @@ h2 {
   top: 825px;
   left: 305px;
   border-radius: 45px;
-  border: 1px solid #e2e8f0;
+  border: 1px solid #416ba3;
   background-color: transparent;
   height: 50px;
   padding-left: 20px;
@@ -96,5 +96,15 @@ h2 {
 @media only screen and (max-width: 1200px) {
   .chat-container {
     margin-left: 16px;
+  }
+}
+@media only screen and (max-width: 992px) {
+  .chat-body {
+    min-height: calc(100vh - 290px);
+  }
+}
+@media only screen and (max-width: 772px) {
+  .chat-body {
+    min-height: calc(100vh - 310px);
   }
 }
