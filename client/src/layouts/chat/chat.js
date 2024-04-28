@@ -7,6 +7,8 @@ import Message from "components/Message";
 const { io } = require("socket.io-client");
 const socket = io("http://localhost:4000");
 
+let processingState = false;
+
 const Chat = () => {
   // State variables
   const [messages, setMessages] = useState([]);
@@ -16,7 +18,17 @@ const Chat = () => {
     socket.on("myEvent", (data) => {
       console.log("Received data Frontend: ", data);
 
-      setMessages([...messages, { text: data, userType: "ai" }]);
+      if (data === "!processing") {
+        processingState = true;
+        setMessages([...messages, { text: "Processing...", userType: "ai" }]);
+      } else {
+        if (processingState) {
+          setMessages([...messages.slice(0, messages.length - 1), { text: data, userType: "ai" }]);
+          processingState = false;
+        } else {
+          setMessages([...messages, { text: data, userType: "ai" }]);
+        }
+      }
     });
 
     return () => {
@@ -42,7 +54,6 @@ const Chat = () => {
         <DashboardNavbar />
 
         <div className="chat-body">
-          {/* Map through messages and render Message component */}
           {messages.map((message, index) => (
             <Message key={index} userType={message.userType} message={message.text} />
           ))}
@@ -53,6 +64,11 @@ const Chat = () => {
             placeholder="Send a message"
             value={inputValue}
             onChange={(e) => setInputValue(e.target.value)}
+            onKeyDown={(e) => {
+              if (e.key === "Enter") {
+                handleMessageSend();
+              }
+            }}
           />
           <button onClick={handleMessageSend}>Submit</button>
         </div>
