@@ -2,7 +2,7 @@
 
 # dependencies
 backend/node_modules
-frontend/node_modules
+client/node_modules
 /.pnp
 .pnp.js
 .yarn/install-state.gz
@@ -16,6 +16,7 @@ frontend/node_modules
 # misc
 .DS_Store
 *.pem
+Travel-AI.rar
 
 # debug
 npm-debug.log*
@@ -23,7 +24,7 @@ yarn-debug.log*
 yarn-error.log*
 
 # local env files
-.env*.local
+.local
 
 # vercel
 .vercel

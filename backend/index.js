@@ -5,10 +5,20 @@ const mongoose = require("mongoose");
 app.use(express.json());
 const auth = require("./routes/auth.js");
 const flight = require("./routes/flights.js");
+const http = require("http").createServer(app);
+const socket = require("./sockets/socket.js");
 
+const { Server } = require("socket.io");
+const io = socket(http);
+const cors = require("cors");
+app.use(cors());
 // middleware
-app.use("/auth", auth);
-app.use("/flight", flight);
+app.use("/api", auth);
+app.use("/api", flight);
+
+http.listen(4000, () => {
+  console.log("listening on *:4000");
+});
 
 const DbConnect = async () => {
   try {
@@ -19,6 +29,6 @@ const DbConnect = async () => {
   }
 };
 app.listen(5000, async () => {
-  DbConnect();
+  // DbConnect();
   console.log("Backend server is running!");
 });

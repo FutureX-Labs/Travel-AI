@@ -68,18 +68,20 @@ router.post("/login", async (req, res) => {
 
 // register
 router.post("/register", async (req, res) => {
-  const { username, password } = req.body;
+  const { fullname, username, password } = req.body;
   const userFound = await auth.findOne({ username }).exec();
   if (userFound) {
     res.status(400).json("Username already exists!");
   } else {
     const hashedPassword = await bcrypt.hash(password, 10);
     await auth.create({
+      fullname,
       username,
       password: hashedPassword,
     });
 
     res.json({
+      fullname,
       username,
       password: hashedPassword,
     });
